@@ -28,7 +28,13 @@ class QuizApplication(private val teamName: String, database: Database? = null):
     }
 
     private fun handleNavQuiz(question: Question) {
-        val svar = "https://www.detsombetyrnoe.no/"
+        var svar = ""
+        when (question.question) {
+            "På hvilken nettside finner man informasjon om rekruttering til NAV IT?" -> svar = "https://www.detsombetyrnoe.no/"
+            "Hva heter applikasjonsplattformen til NAV?" -> svar = "NAIS"
+        }
+
+
         answer(question.category, question.messageId, svar)
     }
 
