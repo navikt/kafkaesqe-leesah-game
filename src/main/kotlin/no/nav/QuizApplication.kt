@@ -20,11 +20,21 @@ class QuizApplication(private val teamName: String, database: Database? = null):
             "team-registration" -> handleRegisterTeam(question)
             "arithmetic" -> handleArithmetic(question)
             "make-ingress" -> handleMakeIngress(question)
+            "NAV" -> handleNavQuiz(question)
             else -> {
                 print(question.category)
             }
         }
     }
+
+    private fun handleNavQuiz(question: Question) {
+        val svar = "https://www.detsombetyrnoe.no/"
+        answer(question.category, question.messageId, svar)
+    }
+
+    /*
+    [Question] category: NAV, question: På hvilken nettside finner man informasjon om rekruttering til NAV IT?, id: a9cca2be-3481-4a99-ad8b-70a21459d166
+     */
 
     private fun handleMakeIngress(question: Question) {
         val ingress = "https://kafkaesque.dev.intern.nav.no"
