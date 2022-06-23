@@ -40,6 +40,8 @@ class QuizApplication(private val teamName: String, database: Database? = null):
 
     /*
     [Question] category: NAV, question: På hvilken nettside finner man informasjon om rekruttering til NAV IT?, id: a9cca2be-3481-4a99-ad8b-70a21459d166
+
+    NAV{"@timestamp":"2022-06-23T15:05:24.939+02:00","@version":"1","message":"[Question] category: NAV, question: Hva heter applikasjonsplattformen til NAV?, id: ace67771-0d3b-46de-bb9c-9f40a943b5b0","logger_name":"kafkaesque","thread_name":"main","level":"INFO","level_value":20000}
      */
 
     private fun handleMakeIngress(question: Question) {
