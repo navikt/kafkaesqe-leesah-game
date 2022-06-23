@@ -15,7 +15,13 @@ class QuizApplication(private val teamName: String, database: Database? = null):
 
     override fun handle(question: Question) {
         logger.log(question)
-        if (question.category == "team-registration") handleRegisterTeam(question)
+
+        when(question.category) {
+            "team-registration" -> handleRegisterTeam(question)
+            else -> {
+                print(question.category)
+            }
+        }
     }
 
 
@@ -28,9 +34,7 @@ class QuizApplication(private val teamName: String, database: Database? = null):
      */
 
     private fun handleRegisterTeam(question: Question) {
-
         answer(question.category, question.messageId, teamName)
-
     }
 
 }
