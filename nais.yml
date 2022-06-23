@@ -3,19 +3,19 @@ kind: Application
 metadata:
   name: kafkaesque
   namespace: leesah-quiz
-  annotations:
-    nginx.ingress.kubernetes.io/proxy-body-size: "256M"
-    nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
+  #annotations:
+  #  nginx.ingress.kubernetes.io/proxy-body-size: "256M"
+  #  nginx.ingress.kubernetes.io/proxy-read-timeout: "300"
   labels:
     team: leesah-quiz
 
 spec:
   image: {{image}}
   port: 8080
-  service:
-    protocol: http
-  ingresses:
-    - https://kafkaesque.dev.intern.nav.no
+  #service:
+  #  protocol: http
+  #ingresses:
+  #  - https://kafkaesque.dev.intern.nav.no
   strategy:
     type: Recreate
   liveness:
