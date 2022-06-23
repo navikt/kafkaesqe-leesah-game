@@ -9,6 +9,10 @@ metadata:
 spec:
   image: {{image}}
   port: 8080
+  service:
+    protocol: http
+  ingresses:
+    - https://kafkaesque.dev.intern.nav.no
   strategy:
     type: Recreate
   liveness:
@@ -28,8 +32,3 @@ spec:
   env:
     - name: QUIZ_TOPIC
       value: "leesah-quiz.leesah-rapid-v2"
-
-  service:
-    protocol: http
-  ingresses:
-    - https://kafkaesque.dev.intern.nav.no
