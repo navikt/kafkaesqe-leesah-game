@@ -26,7 +26,26 @@ class QuizApplication(private val teamName: String, database: Database? = null):
     }
 
     private fun handleArithmetic(question: Question) {
-        answer(question.category, question.messageId, "-6")
+        var l = question.question.split(" ")
+
+
+        var tall1 = l[0].toInt()
+        var tall2 = l[2].toInt()
+
+        var result = 0
+
+        when(l[1]) {
+            "-" -> result = tall1 - tall2
+            "+" -> result = tall1 + tall2
+            "*" -> result = tall1 * tall2
+            "/" -> result = tall1 / tall2
+            else -> {
+
+            }
+        }
+
+
+        answer(question.category, question.messageId, result.toString())
     }
 
 
