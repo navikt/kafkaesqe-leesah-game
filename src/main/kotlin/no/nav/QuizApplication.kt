@@ -21,11 +21,30 @@ class QuizApplication(private val teamName: String, database: Database? = null):
             "arithmetic" -> handleArithmetic(question)
             "make-ingress" -> handleMakeIngress(question)
             "NAV" -> handleNavQuiz(question)
+            "deduplication" -> handleDuplication(question)
             else -> {
                 print(question.category)
             }
         }
     }
+
+    private fun handleDuplication(question: Question) {
+        val svar = "you wont dupe me!"
+
+
+
+
+
+        // answer(question.category, question.messageId, svar)
+    }
+
+    /*
+    [Question] category: deduplication,
+     question: answer this question only once with an <you wont dupe me!>,
+      id: ef623f1c-13f2-49ac-9a3b-158fa2282418",
+      "logger_name":"kafkaesque","thread_name":"main","level":"INFO","level_value":20000}
+     */
+
 
     private fun handleNavQuiz(question: Question) {
         var svar = ""
@@ -37,12 +56,6 @@ class QuizApplication(private val teamName: String, database: Database? = null):
 
         answer(question.category, question.messageId, svar)
     }
-
-    /*
-    [Question] category: NAV, question: På hvilken nettside finner man informasjon om rekruttering til NAV IT?, id: a9cca2be-3481-4a99-ad8b-70a21459d166
-
-    NAV{"@timestamp":"2022-06-23T15:05:24.939+02:00","@version":"1","message":"[Question] category: NAV, question: Hva heter applikasjonsplattformen til NAV?, id: ace67771-0d3b-46de-bb9c-9f40a943b5b0","logger_name":"kafkaesque","thread_name":"main","level":"INFO","level_value":20000}
-     */
 
     private fun handleMakeIngress(question: Question) {
         val ingress = "https://kafkaesque.dev.intern.nav.no"
