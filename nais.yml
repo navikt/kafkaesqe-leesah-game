@@ -28,3 +28,8 @@ spec:
   env:
     - name: QUIZ_TOPIC
       value: "leesah-quiz.leesah-rapid-v2"
+
+  service:
+    protocol: http
+  ingresses:
+    - https://kafkaesque.dev.intern.nav.no

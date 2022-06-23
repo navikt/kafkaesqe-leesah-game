@@ -19,18 +19,23 @@ class QuizApplication(private val teamName: String, database: Database? = null):
         when(question.category) {
             "team-registration" -> handleRegisterTeam(question)
             "arithmetic" -> handleArithmetic(question)
+            "make-ingress" -> handleMakeIngress(question)
             else -> {
                 print(question.category)
             }
         }
     }
 
+    private fun handleMakeIngress(question: Question) {
+        val ingress = "https://kafkaesque.dev.intern.nav.no"
+        answer(question.category, question.messageId, ingress)
+    }
+
     private fun handleArithmetic(question: Question) {
-        var l = question.question.split(" ")
+        val l = question.question.split(" ")
 
-
-        var tall1 = l[0].toInt()
-        var tall2 = l[2].toInt()
+        val tall1 = l[0].toInt()
+        val tall2 = l[2].toInt()
 
         var result = 0
 
@@ -39,11 +44,7 @@ class QuizApplication(private val teamName: String, database: Database? = null):
             "+" -> result = tall1 + tall2
             "*" -> result = tall1 * tall2
             "/" -> result = tall1 / tall2
-            else -> {
-
-            }
         }
-
 
         answer(question.category, question.messageId, result.toString())
     }
