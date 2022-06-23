@@ -1,3 +1,2 @@
 
-rootProject.name = "leesah-game-starter-kotlin"
-
+rootProject.name = "kafkaesque-leesah-game"
