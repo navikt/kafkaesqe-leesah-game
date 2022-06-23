@@ -16,6 +16,8 @@ spec:
    # protocol: http
   #ingresses:
    # - https://kafkaesque.dev.intern.nav.no
+  #ingresses:
+  #  - https://kafkaesque.dev.intern.nav.no
   strategy:
     type: Recreate
   liveness:
