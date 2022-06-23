@@ -18,10 +18,15 @@ class QuizApplication(private val teamName: String, database: Database? = null):
 
         when(question.category) {
             "team-registration" -> handleRegisterTeam(question)
+            "arithmetic" -> handleArithmetic(question)
             else -> {
                 print(question.category)
             }
         }
+    }
+
+    private fun handleArithmetic(question: Question) {
+        answer(question.category, question.messageId, "-6")
     }
 
 
